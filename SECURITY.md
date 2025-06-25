@@ -1,21 +1,30 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported Versions
+## 📦 Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The following table outlines which versions of this project are currently supported with **security updates**:
 
 | Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+|---------|--------------------|
+| 5.1.x   | ✅ Yes              |
+| 5.0.x   | ❌ No               |
+| 4.0.x   | ✅ Yes              |
+| < 4.0   | ❌ No               |
 
-## Reporting a Vulnerability
+---
 
-Use this section to tell people how to report a vulnerability.
+## 🛡️ Reporting a Vulnerability
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+If you discover a security vulnerability, please follow these steps:
+
+1. **Email us directly** at `thenabinamallik@gmail.com` with a detailed description.
+2. Include reproduction steps, affected components, and potential impact.
+3. You can expect an initial response **within 3 business days**.
+4. If the vulnerability is confirmed, a fix will be issued with proper attribution unless anonymity is requested.
+5. If rejected, you'll receive a clear explanation why.
+
+We encourage responsible disclosure and appreciate your efforts to help make this project more secure.
+
+---
+
+📝 *Last updated: June 2025*
