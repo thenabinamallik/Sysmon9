@@ -1,0 +1,45 @@
+# GitHub Actions CI Workflow for Python System Monitor App
+# This workflow installs dependencies, runs linting and tests
+# Modify as needed to include packaging (e.g., PyInstaller) or deploy steps
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🐍 Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: 📦 Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: 🧹 Lint with flake8
+        run: |
+          # Stop on critical Python syntax errors
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # Report all lint issues (warnings only)
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+      - name: ✅ Run Tests with pytest
+        run: |
+          pytest
